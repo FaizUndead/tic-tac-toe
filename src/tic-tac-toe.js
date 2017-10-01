@@ -18,14 +18,14 @@ class TicTacToe {
         }
     }
 
-    nextTurn(rowIndex, columnIndex) {
-        if(!this.grid[rowIndex][columnIndex]) {
+    nextTurn(row, col) {
+        if(!this.grid[row][col]) {
 
             if(!this.player) {
-                this.grid[rowIndex][columnIndex] ='x';
+                this.grid[row][col] ='x';
             }
             else {
-                this.grid[rowIndex][columnIndex] = 'o';
+                this.grid[row][col] = 'o';
             }
             this.numOfTurns++;
 
@@ -58,9 +58,9 @@ class TicTacToe {
         return this.numOfTurns === 9 && this.winner === false;
     }
 
-    getFieldValue(rowIndex, colIndex) {
-        if(this.grid[rowIndex][colIndex]) {
-            return this.grid[rowIndex][colIndex];
+    getFieldValue(row, col) {
+        if(this.grid[row][col]) {
+            return this.grid[row][col];
         }
         else {
             return null;
